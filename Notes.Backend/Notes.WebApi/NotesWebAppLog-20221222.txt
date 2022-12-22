@@ -1,0 +1,86 @@
+2022-12-22 19:48:57.719 +03:00 [INF] Entity Framework Core 5.0.5 initialized 'NotesDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2022-12-22 19:48:57.801 +03:00 [FTL] An error occurred while app initialization
+System.ArgumentException: Connection string keyword 'server' is not supported. For a possible alternative, see https://go.microsoft.com/fwlink/?linkid=2142181.
+   at Microsoft.Data.Sqlite.SqliteConnectionStringBuilder.GetIndex(String keyword)
+   at Microsoft.Data.Sqlite.SqliteConnectionStringBuilder.set_Item(String keyword, Object value)
+   at System.Data.Common.DbConnectionStringBuilder.set_ConnectionString(String value)
+   at Microsoft.Data.Sqlite.SqliteConnectionStringBuilder..ctor(String connectionString)
+   at Microsoft.EntityFrameworkCore.Sqlite.Storage.Internal.SqliteDatabaseCreator.Exists()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabaseCreator.EnsureCreated()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()
+   at Notes.Persistence.DbInitializer.Initialize(NotesDbContext context) in C:\Users\Артур\source\repos\Notes-main\NotesLab\Notes.Backend\Notes.Persistence\DbInitializer.cs:line 7
+   at Notes.WebApi.Program.Main(String[] args) in C:\Users\Артур\source\repos\Notes-main\NotesLab\Notes.Backend\Notes.WebApi\Program.cs:line 29
+2022-12-22 19:48:57.885 +03:00 [INF] User profile is available. Using 'C:\Users\Артур\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-22 19:48:58.079 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 19:48:58.079 +03:00 [INF] Hosting environment: Development
+2022-12-22 19:48:58.079 +03:00 [INF] Content root path: C:\Users\Артур\source\repos\Notes-main\NotesLab\Notes.Backend\Notes.WebApi
+2022-12-22 19:48:58.107 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44397/ - -
+2022-12-22 19:48:58.136 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44397/index.html - -
+2022-12-22 19:48:58.207 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44397/ - - - 301 - - 101.0975ms
+2022-12-22 19:48:58.271 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44397/index.html - - - 200 - text/html;charset=utf-8 135.1177ms
+2022-12-22 19:48:58.278 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44397/swagger-ui.css - -
+2022-12-22 19:48:58.278 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44397/swagger-ui-bundle.js - -
+2022-12-22 19:48:58.278 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44397/swagger-ui-standalone-preset.js - -
+2022-12-22 19:48:58.310 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-12-22 19:48:58.310 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-12-22 19:48:58.313 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44397/swagger-ui.css - - - 200 143410 text/css 35.4762ms
+2022-12-22 19:48:58.314 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-12-22 19:48:58.319 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44397/swagger-ui-standalone-preset.js - - - 200 336841 application/javascript 40.4868ms
+2022-12-22 19:48:58.339 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44397/swagger-ui-bundle.js - - - 200 1097461 application/javascript 60.7087ms
+2022-12-22 19:48:58.449 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44397/swagger-ui-bundle.js.map - -
+2022-12-22 19:48:58.546 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44397/swagger-ui-bundle.js.map - - - 404 - - 97.2092ms
+2022-12-22 19:48:58.615 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44397/swagger-ui-standalone-preset.js.map - -
+2022-12-22 19:48:58.616 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44397/swagger-ui-standalone-preset.js.map - - - 404 - - 0.8951ms
+2022-12-22 19:48:58.661 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44397/swagger/v1/swagger.json - -
+2022-12-22 19:48:58.740 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44397/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 79.1079ms
+2022-12-22 19:51:53.831 +03:00 [INF] Entity Framework Core 5.0.5 initialized 'NotesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-12-22 19:51:54.775 +03:00 [INF] Executed DbCommand (155ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [NotesDB];
+2022-12-22 19:51:54.804 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [NotesDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2022-12-22 19:51:54.818 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-12-22 19:51:54.902 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Notes] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserId] uniqueidentifier NOT NULL,
+    [Title] nvarchar(250) NULL,
+    [Details] nvarchar(max) NULL,
+    [CreationDate] datetime2 NOT NULL,
+    [EditDate] datetime2 NULL,
+    CONSTRAINT [PK_Notes] PRIMARY KEY ([Id])
+);
+2022-12-22 19:51:54.904 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Notes_Id] ON [Notes] ([Id]);
+2022-12-22 19:51:54.941 +03:00 [INF] User profile is available. Using 'C:\Users\Артур\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-22 19:51:55.119 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 19:51:55.119 +03:00 [INF] Hosting environment: Development
+2022-12-22 19:51:55.119 +03:00 [INF] Content root path: C:\Users\Артур\source\repos\Notes-main\NotesLab\Notes.Backend\Notes.WebApi
+2022-12-22 19:51:55.152 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44397/ - -
+2022-12-22 19:51:55.202 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44397/index.html - -
+2022-12-22 19:51:55.225 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44397/ - - - 301 - - 73.3297ms
+2022-12-22 19:51:55.290 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44397/index.html - - - 200 - text/html;charset=utf-8 88.3424ms
+2022-12-22 19:51:55.301 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44397/swagger-ui.css - -
+2022-12-22 19:51:55.301 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44397/swagger-ui-standalone-preset.js - -
+2022-12-22 19:51:55.301 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44397/swagger-ui-bundle.js - -
+2022-12-22 19:51:55.346 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-12-22 19:51:55.346 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-12-22 19:51:55.346 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-12-22 19:51:55.349 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44397/swagger-ui.css - - - 200 143410 text/css 48.4545ms
+2022-12-22 19:51:55.355 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44397/swagger-ui-standalone-preset.js - - - 200 336841 application/javascript 54.6889ms
+2022-12-22 19:51:55.373 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44397/swagger-ui-bundle.js - - - 200 1097461 application/javascript 72.8046ms
+2022-12-22 19:51:55.503 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44397/swagger-ui-bundle.js.map - -
+2022-12-22 19:51:55.600 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44397/swagger-ui-bundle.js.map - - - 404 - - 96.5027ms
+2022-12-22 19:51:55.702 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44397/swagger-ui-standalone-preset.js.map - -
+2022-12-22 19:51:55.703 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44397/swagger-ui-standalone-preset.js.map - - - 404 - - 1.3411ms
+2022-12-22 19:51:55.768 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44397/swagger/v1/swagger.json - -
+2022-12-22 19:51:55.886 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44397/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 117.2826ms
+2022-12-22 19:55:26.555 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44397/api/1.0/Note - -
+2022-12-22 19:55:26.938 +03:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token: CfDJ8It9loy8UbVLrI8QtEFMdl3wOvZVBwfteKjG3qLLyw7UKcEqsjofyB3BlHCWVBUqZnNtyIxfjXuA-CuoU87UOy5b0Fga3hvtg5jELARqloSXV_r-55DyLs_yMEoSVpUpTt6ZQV6br7rcHDujXIJxiUA
+2022-12-22 19:55:26.942 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-12-22 19:55:26.946 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-12-22 19:55:26.947 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44397/api/1.0/Note - - - 401 - - 392.2261ms
